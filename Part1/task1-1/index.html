@@ -161,28 +161,34 @@
             <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
             <h2>侧栏注册窗口标题</h2>
             <form>
-                <p>请输入邮箱地址：<input type="text" placeholder="这是一个文本输入框"></p>
+                <label>请输入邮箱地址：<input type="text" placeholder="这是一个文本输入框"></label>
                 <p>邮箱地址请按要求格式输入</p>
-                <p>请输入密码：<input type="password" placeholder="这是一个文本输入框"> 请重复输入密码：<input type="password" placeholder="这是一个文本输入框"></p>
+                <label>请输入密码：<input type="password" placeholder="这是一个文本输入框"></label> 
+                <label>请重复输入密码：<input type="password" placeholder="这是一个文本输入框"></label>
                 <p>密码请为6-16位英文数字</p>
-                <p>性别： <input type="radio" name="sex" value="male">男 <input type="radio" name="sex" value="female">女 &nbsp; 
-                   城市： 
-                    <select>
-                        <option>北京</option>
-                    </select> 
-                    爱好： 
-                    <input type="checkbox" name="hobbies">运动
-                    <input type="checkbox" name="hobbies">艺术
-                    <input type="checkbox" name="hobbies">科学   
-                    个人描述：
-                    <textarea>这是一个多行输入框，输入您的个人描述</textarea>
+                <p>
+                    <label>性别： <input type="radio" name="sex" value="male">男</label>
+                    <label><input type="radio" name="sex" value="female">女</label>
+                    <label>
+                        城市：
+                        <select>
+                            <option>北京</option>
+                        </select>
+                    </label> 
+                    
+                    <label>爱好：<input type="checkbox" value="sports">运动</label>
+                    <label><input type="checkbox" value="art">艺术</label>
+                    <label><input type="checkbox" value="science">科学</label>   
+                    <label>个人描述：
+                        <textarea>这是一个多行输入框，输入您的个人描述</textarea>
+                    </label>
                     <input type="submit" value="确认提交">             
                 </p>
             </form>
         </aside>
         
         <footer>
-            <p>版权所有&copy;</p>
+            <span>版权所有&copy;</span>
         </footer>
     </body>
 </html>
