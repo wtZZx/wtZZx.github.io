@@ -39,7 +39,27 @@ main > article > h2 {
     list-style: none;
 }
 
+.link-color {
+    color: #999;
+}
+
 .task-list li a {
     text-decoration: none;
-    color: #999;
+}
+
+.code-page {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 5px;
+    line-height: 20px;
+    text-align: center;
+    background: #3cc;
+    color: #fff;
+    margin-left: 10px;
+    transition: all .5s ease;
+}
+
+.code-page:hover {
+    transform: rotate(-15deg);
 }
