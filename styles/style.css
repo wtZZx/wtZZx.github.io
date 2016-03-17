@@ -1,0 +1,45 @@
+body, header, div, img, em, h2, article, ol, li ,a, main {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+header {
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+}
+
+#title > img {
+    float: left;
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+#title > img + h2 {
+    line-height: 100px;
+    color: #999;
+}
+
+main {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+main > article > h2 {
+    margin-bottom: 20px;
+}
+
+.task-list li {
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+.task-list li a {
+    text-decoration: none;
+    color: #999;
+}
