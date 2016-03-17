@@ -56,10 +56,40 @@ main > article > h2 {
     text-align: center;
     background: #3cc;
     color: #fff;
-    margin-left: 10px;
+    margin-left: 5px;
     transition: all .5s ease;
 }
 
 .code-page:hover {
     transform: rotate(-15deg);
+}
+
+.demo-page {
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background: #9933CC;
+    transition: all .5s ease;
+}
+
+.demo-page:hover {
+    transform: rotate(15deg);
+}
+
+.review-page {
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    margin-left: 5px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background: #CC0000;
+    transition: all .5s ease;
 }
