@@ -1,0 +1,273 @@
+/*** reset ***/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,header,nav,footer,aside,article {    
+     margin: 0;   
+     padding: 0;   
+} 
+table {  
+     border-collapse: collapse;   
+     border-spacing: 0;   
+} 
+fieldset,img {    
+     border: 0;   
+} 
+address,caption,cite,code,dfn,em,strong,th,var {  
+     font-style: normal;   
+     font-weight: normal;   
+} 
+ul {  
+     list-style: none;   
+} 
+h1,h2,h3,h4,h5,h6 {  
+     font-weight: normal;   
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    height: 60px;
+    background: #333333;
+}
+
+body {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    background: #DEDEDE;
+    min-width: 780px;
+}
+
+header > nav {
+    float: right;
+}
+
+.nav {
+    margin-right: 15px;
+    list-style-type: disc;
+}
+
+.nav > li {
+    float: left;
+    margin-right: 25px;
+}
+
+.nav > li a {
+    line-height: 60px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.nav > li:last-child a {
+    color: #ccc;
+}
+
+main {
+    margin-right: 420px;
+    margin-left: 20px;
+    min-width: 340px;
+    width: auto;
+}
+
+main::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+article {
+    width: auto;
+    margin: 20px auto;
+    padding: 35px 20px;
+    background: #fff;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.h3-title {
+    margin-top: 23px;
+    color: #5F5E5A;   
+}
+
+article p {
+    line-height: 25px;
+}
+
+.author-time {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #5F5E5A;
+}
+
+.author-time + p {
+    margin-top: 10px;
+    text-indent: 28px;
+}
+
+.par-pic {
+    margin: 20px 0;
+}
+
+.par-pic + p {
+    text-indent: 28px;
+}
+
+.show-pic-ul {
+    margin-left: 30px;
+    margin-top: 13px;
+}
+
+.show-pic-list {
+    display: inline-block;
+    width: 125px;
+    height: 120px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.show-pic-list  p {
+    line-height: 2em;
+    text-align: center;
+}
+
+.beautiful-pic {
+    width: 100px;
+    height: 80px;
+    margin: 0 10px 10px 12px;
+}
+
+.author-time + ol {
+    margin: 10px 0 10px 45px;
+}
+
+.table-style {
+    width: 100%;
+}
+
+.table-style,.table-style tr,.table-style th,.table-style td {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    text-indent: 5px;
+}
+
+.table-style th {
+    height: 23px;
+    background: #333333;
+    color: #fff;
+    text-align: left;
+}
+
+.table-style tr {
+    height: 23px;
+}
+
+.last-tr-style {
+    background: #ccc;
+    color: #000;
+}
+
+.width-208 {
+    width: 208px;
+}
+
+aside {
+    
+    position: absolute;
+    right: 20px;
+    
+    width: 366px;
+    height: 500px;
+    background: #fff;
+    margin: 20px auto 20px auto;
+    padding: 20px 0 5px 20px;
+    box-shadow: 1px 1px 3px #000;
+}
+
+aside::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.side-h2 {
+    padding: 3px 15px;
+    border-left: 2px solid #ccc;
+}
+
+.input-box {
+    width: 290px;
+    margin: 0 0 0 0px;
+    padding-right: 30px;
+    text-align: right;
+}
+
+input[type="text"],input[type="password"] {
+    height: 19px;
+    width: 132px;
+    margin-left: 15px;
+}
+
+.email {
+    margin-top: 30px;
+}
+
+.password {
+    margin-bottom: 10px;
+}
+
+.repassword + p, .email + p {
+    margin-left: 153px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.sex-city-hobby {
+    margin-left: 105px;
+    margin-bottom: 10px;
+}
+
+.sex-city-hobby span {
+    margin-right: 15px;
+}
+
+#city {
+    margin-left: 15px;
+}
+
+.text-area {
+    margin-left: 75px;
+    margin-bottom: 20px;
+}
+
+.text-area > label {
+    float: left;
+    margin-right: 16px;
+}
+
+
+#person-info {
+    width: 200px;
+    height: 90px;
+}
+
+.button-submit {
+    width: 350px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    background: #3552D0;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-family: "微软雅黑";
+}
+
+footer {
+    height: 70px;
+    background: #000;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+}
