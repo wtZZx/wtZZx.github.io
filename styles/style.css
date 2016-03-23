@@ -93,3 +93,7 @@ main > article > h2 {
     background: #CC0000;
     transition: all .5s ease;
 }
+
+.review-page:hover {
+    transform: rotate(15deg);
+}
