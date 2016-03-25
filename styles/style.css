@@ -3,6 +3,21 @@ body, header, div, img, em, h2, article, ol, li ,a, main {
     padding: 0;
 }
 
+html::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+        
+html::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+}
+        
+html::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 6px;
+}
+
 body {
     font-family: "微软雅黑";
     font-size: 14px;
@@ -28,6 +43,10 @@ header {
 main {
     margin-left: 30px;
     margin-top: 30px;
+}
+
+main > article {
+    margin: 30px 0 15px 15px;
 }
 
 main > article > h2 {
@@ -79,6 +98,19 @@ main > article > h2 {
 
 .demo-page:hover {
     transform: rotate(15deg);
+}
+
+.unfinished {
+    display: inline-block;
+    width: 45px;
+    height: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    background: #ccc;
+    cursor: wait;
 }
 
 .review-page {

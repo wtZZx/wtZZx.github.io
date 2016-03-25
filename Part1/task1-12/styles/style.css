@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+table tr:nth-child(2n-1) {
+    background: #ccc;
+}
+
+table tr:nth-child(1) {
+    background: #000;
+    color: #fff;
+}
+
+table tr:nth-child(2) {
+    color: red;
+}
+
+form {
+    width: 500px;
+    height: 120px;
+}
+
+#css-transition {
+    width: 100px;
+    transition: all 1s ease-in;
+}
+
+#css-transition:focus {
+    width: 200px;
+}
+
+
+.tab-wrap {
+    position: relative;
+    width: 750px;
+    height: 100px;
+}
+
+.tab {
+    width: 250px;
+    height: 100px;
+    overflow: hidden;
+}
+
+
+.tab-wrap [class^="tab"] {
+    float: left;
+    width: 250px;
+    height: 100px;
+}
+
+.tab-wrap {
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-name: tab-wrap;
+}
+
+@keyframes tab-wrap {
+    0% {
+        left: 0px;  
+    }
+    
+    10% {
+        left: 0px;
+    }
+    
+    20% {
+        left: -250px;
+    }
+    
+    30% {
+        left: -250px;
+    }
+    
+    40% {
+        left: -500px;
+    }
+    
+    50% {
+        left: -500px;
+    }
+    
+    60% {
+        left: -250px;
+    }
+    
+    70% {
+        left: -250px;
+    }
+    
+    80% {
+        left: -250px;
+    }
+    
+    90% {
+        left: -0px;
+    }
+    
+    100% {
+        left: 0px;
+    }
+
+}
+
+
+.tab-1 {
+    background: red;
+}
+
+.tab-2 {
+    background: yellow;
+}
+
+.tab-3 {
+    background: blue;
+}
+
+.tab ul {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 143px;
+}
+
+.tab ul li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background: rgba(0, 0, 0, .1);
+    text-align: center;
+}
