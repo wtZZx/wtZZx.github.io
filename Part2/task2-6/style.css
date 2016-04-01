@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑";
+    padding: 10px;
+}
+
+
+#Queue-list li {
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    display: inline-block;
+    margin: 30px 10px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+
+#input-box {
+    box-sizing: border-box;
+    height: 30px;
+    width: 250px;
+    padding: 10px;
+}
+
+fieldset {
+    border: none;
+    margin-top: 10px;
+}
+
+fieldset button {
+    border: none;
+    width: 100px;
+    height: 30px;
+}
