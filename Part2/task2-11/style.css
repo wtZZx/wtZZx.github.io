@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div {
+    display: inline-flex;
+    flex-basis: 50%;
+    border: 2px solid #6699CC;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    background: #fff;
+    color: #000;
+}
+
+#root {
+    height: 400px;
+    justify-content: space-between;
+    z-index: -999;
+}
+
+.deep1 {
+    height: 350px;
+    z-index: 1;
+}
+
+.deep2 {
+    height: 300px;
+    z-index: 2;
+}
+
+.deep3 {
+    height: 250px;
+    z-index: 3;
+}
+
+.active {
+    background: #3cc;
+}
+
+.find {
+    background: rgba(102, 102, 204, .5);
+}
+
+#buttonList button {
+    width: 120px;
+    height: 50px;
+    margin: 10px;
+    border: none;
+    background: #ccc;
+}
+
+#search-box input {
+    width: 180px;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#search-box button {
+    height: 50px;
+    width: 120px;
+    border: none;
+}
