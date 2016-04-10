@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="styles/style.css" type="text/css" rel="stylesheet">
+        <link href="styles/font-awesome.css" rel="stylesheet" type="text/css">
+        <title>Tree</title>
+    </head>
+    
+    <body>
+        <label id="test"><input type="text" id="search-input" placeholder="搜“天猫超市”试试？"><button id="test" name="postOrder">搜索</button></label>
+        <div id="wrap">
+            <ul id="root">
+                <li name="root-child">
+                    <span>
+                        <i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                        书籍
+                    </span>
+                    <ul class="show">
+                        <li>
+                            <span>
+                                <i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                《包法利夫人》
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                《哈利波特》
+                            </span>
+                            <ul class="show">
+                                <li>
+                                    <span>
+                                        <i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                        《哈利波特与魔法石》
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li name="root-child">
+                    <span>
+                        <i class="fa fa-folder" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                        电商
+                    </span>
+                    <ul class="hidden">
+                        <li>
+                            <span>
+                                <i class="fa fa-folder-open" name="switch"></i>
+                                <i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                京东
+                            </span>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="fa fa-folder" name="switch"></i>
+                                <i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                淘宝
+                            </span>
+                            <ul class="hidden">
+                                <li>
+                                    <span>
+                                        <i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                        天猫超市
+                                    </span>
+                                </li>
+                                <li><span><i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>聚划算</span></li>
+                            </ul>
+                        </li>
+                        <li><span><i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>亚马逊</span></li>
+                    </ul>
+                </li>
+                
+                 <li name="root-child">
+                    <span><i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>运动</span>
+                    <ul class="show">
+                        <li>
+                            <span><i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>跑步</span>
+                            <ul class="show">
+                                <li>
+                                    <span>
+                                        <i class="fa fa-folder-open" name="switch"></i>
+                                        <i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>
+                                        1000米
+                                    </span>
+                                </li>
+                                <li><span><i class="fa fa-folder-open" name="switch"></i><i class="fa fa-times" name="del"></i><i class="fa fa-plus" name="add"></i>5000米</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    <script src="task.js"></script>
+    </body>
+    
+</html>
