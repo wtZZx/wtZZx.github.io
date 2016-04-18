@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="styles/style.css" type="text/css" rel="stylesheet">
+        <title>行星与飞船（一）</title>
+    </head>
+    
+    <body>
+        
+        <div id="wrap">
+            <div class="space">
+                <div class="ship-box">
+   
+                </div>
+                <div class="plante">
+                </div>
+            </div>
+            
+            <div class="panel">
+                <div class="power-config">
+                    <span>动力系统选择</span>
+                    <div>
+                        <input type="radio" name="power" value="305" id="go-one" checked="checked">
+                        <label for="go-on">前进号(速率30px/s,能耗 5%/s)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="power" value="507" id="pentium">
+                        <label for="pentium">奔腾号(速率50px/s,能耗 7%/s)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="power" value="809" id="super">
+                        <label for="super">超越号(速率80px/s, 能耗9%/s)</label>
+                    </div>
+                </div>
+                
+                <div class="energy-config">
+                    <span>能源系统选择</span>
+                    <div>
+                        <input type="radio" name="energy" value="2" id="power-type" checked="checked">
+                        <label for="power-type">劲量型(补充能源速度2%/s)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="energy" value="3" id="sunlight-type">
+                        <label for="sunlight-type">光能型(补充能源速度3%/s)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="energy" value="4" id="forever-type">
+                        <label for="forever-type">永久型(补充能源速度4%/s)</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label>轨道1:
+                        <button value="1" name="create">创建</button>
+                        <button value="1" name="destruct">自爆</button>
+                        <button value="1" name="start">飞行</button>
+                        <button value="1" name="stop">停止</button>
+                    </label>
+                </div>
+                
+                <div>
+                    <label>轨道2:
+                        <button value="2" name="create">创建</button>
+                        <button value="2" name="destruct">自爆</button>
+                        <button value="2" name="start">飞行</button>
+                        <button value="2" name="stop">停止</button>
+                    </label>
+                </div>
+                
+                <div>
+                    <label>轨道3:
+                        <button value="3" name="create">创建</button>
+                        <button value="3" name="destruct">自爆</button>
+                        <button value="3" name="start">飞行</button>
+                        <button value="3" name="stop">停止</button>
+                    </label>
+                </div>
+                
+                <div>
+                    <label>轨道4:
+                        <button value="4" name="create">创建</button>
+                        <button value="4" name="destruct">自爆</button>
+                        <button value="4" name="start">飞行</button>
+                        <button value="4" name="stop">停止</button>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="console">
+            </div>
+            
+        </div>
+        
+        <script src="script/ship.js"></script>   
+    </body>
+</html>
