@@ -175,6 +175,8 @@
                 }
             })(),
             
+            
+            
             getCommond: function (code) {
                 var shipCode = code.substring(0, 4),
                     commondCode = code.substring(4);
@@ -182,10 +184,77 @@
                     id: this.shipID[shipCode](),
                     commond: this.commond[commondCode]()
                 }
-            }
+            },
+            
+            enCode: (function () {
+                
+                return {
+                    typeCode : function (type) {
+                        var tCode = "";
+                        switch(type.powerType.speed) {
+                            case 3: tCode += "00"; break;
+                            case 5: tCode += "01"; break;
+                            case 8: tCode += "10"; break;
+                        }
+                        
+                        switch(type.energyType.solarPower) {
+                            case 2: tCode += "00"; break;
+                            case 3: tCode += "01"; break;
+                            case 4: tCode += "10"; break;
+                        }
+                        
+                        return tCode;
+                    },
+                    
+                    trankCode: function (trank) {
+                        var trankC = "";
+                        switch(trank) {
+                            case 1: trankC += "00"; break;
+                            case 2: trankC += "01"; break;
+                            case 3: trankC += "10"; break;
+                            case 4: trankC += "11"; break;
+                        }
+                        return trankC;
+                    },
+                    
+                    encodeState: function (state) {
+                        var stateC = "";
+                        if(state === false) {
+                            stateC += "00";
+                        } else if(state === true) {
+                            stateC += "01";
+                        } else if(state === "distruct") {
+                            stateC += "10";
+                        }
+                        return stateC;
+                    }
+                }
+                
+            })()
         }
 
     })();
+    
+    
+    ship.prototype.transmitter = function () {
+        var ship = this;
+        var timer = setInterval(function () {
+            if(ship !== null) {
+                
+                var code = ship.adapter.enCode.typeCode(ship.type) + ship.adapter.enCode.trankCode(ship.trank) + ship.adapter.enCode.encodeState(ship.state);
+                
+                var energyCode = ship.energy.toString(2);
+                
+                BUS.get(code + energyCode);
+                
+                if(ship.adapter.enCode.encodeState(ship.state) === "10") {
+                    clearInterval(timer);
+                }
+            } 
+        }, 100);
+    }
+    
+    
     
     
     // 类型配置
@@ -246,31 +315,151 @@
             
     })();
     
-    
-    // 指挥官
-    var commander = function (id) {
+    var planet = (function () {
         return {
-            create: {
-                id: id,
-                commond: "create"
+            commander: function(id) {
+                return {
+                    create: {
+                        id: id,
+                        commond: "create"
+                    },
+
+                    stop: {
+                        id: id,
+                        commond: "stop"
+                    },
+
+                    start: {
+                        id: id,
+                        commond: "start"
+                    },
+
+                    destruct: {
+                        id: id,
+                        commond: "destruct"
+                    }
+                }
             },
             
-            stop: {
-                id: id,
-                commond: "stop"
+            Adapter : (function() {
+                return {
+                    shipID: (function() {
+                        return {
+                            1 : function() {
+                                return "0001";
+                            },
+
+                            2 : function() {
+                                return "0010";
+                            },
+
+                            3 : function() {
+                                return "0011";
+                            },
+
+                            4 : function() {
+                                return "0100";
+                            }
+                        }
+                    })(),
+                    commond: (function() {
+                        return {
+                            
+                            create: function () {
+                                return "0000";
+                            },
+                            
+                            start: function() {
+                                return "0001";
+                            },
+
+                            stop: function() {
+                                return "0010";
+                            },
+
+                            destruct: function() {
+                                return "0011";
+                            }
+                        }
+                    })(),
+                    
+                    decode: function (code) {
+                        var shipState = {trank: null, powerType: null, energyType: null, state: null, energy: null}
+                        var powerTypeCode = code.substring(0, 2),
+                            energyTypeCode = code.substring(2, 4),
+                            trankCode = code.substring(4, 6),
+                            stateCode = code.substring(6, 8),
+                            energyCode = code.substring(8);
+                            
+                        
+                        switch(powerTypeCode) {
+                            case "00": shipState.powerType = "前进号"; break;
+                            case "01": shipState.powerType = "奔腾号"; break;
+                            case "10": shipState.powerType = "超越号"; break;
+                        }
+                        
+                        switch(energyTypeCode) {
+                            case "00": shipState.energyType = "劲量型"; break;
+                            case "01": shipState.energyType = "光能型"; break;
+                            case "10": shipState.energyType = "永久型"; break;
+                        }
+                        
+                        switch(trankCode) {
+                            case "00": shipState.trank = "1号轨道"; break;
+                            case "01": shipState.trank = "2号轨道"; break;
+                            case "10": shipState.trank = "3号轨道"; break;
+                            case "11": shipState.trank = "4号轨道"; break;
+                        }
+                        
+                        switch(stateCode) {
+                            case "00": shipState.state = "停止"; break;
+                            case "01": shipState.state = "飞行"; break;
+                            case "10": shipState.state = "马上销毁"; break;
+                        }
+                        
+                        shipState.energy = parseInt(energyCode, 2);
+                        
+                        return shipState;    
+                        
+                    }
+                }
+
+            })(),
+            
+            getCode: function (commond) {
+                return this.Adapter.shipID[commond.id]() + this.Adapter.commond[commond.commond]();
             },
             
-            start: {
-                id: id,
-                commond: "start"
+            Receiver: function (code) {
+                this.DC(code);
             },
             
-            destruct: {
-                id: id,
-                commond: "destruct"
-            }
+            DC: function (code) {
+                var shipDate = [null, null, null, null, null];
+                shipDate[parseInt(code.substring(4, 6), 2) + 1] = this.Adapter.decode(code);
+                this.renderConsle(shipDate);
+            },
+            
+            renderConsle: function (shipDate) {
+                shipDate.forEach(function(element, index) {
+                    if(element !== null && element !== undefined) {
+                        var inner = "<td>" + element.trank + "</td>" + "<td>" + element.powerType + "</td>" + "<td>" + element.energyType + "</td>" + "<td>" + element.state + "</td>" + "<td>" + element.energy + "%" + "</td>";
+                        if($(".state-" + index).innerHTML !== inner) {
+                            $(".state-" + index).innerHTML = inner;
+                        }
+                        if(element.state === "马上销毁") {
+                            setTimeout(function () {
+                                $(".state-" + index).innerHTML = "";
+                            }, 500); 
+                        }
+                    }
+                }, this);
+            }  
+            
         }
-    }
+    })();
+    
+
 
     // BUS 
     var BUS = (function () {
@@ -284,62 +473,13 @@
                 }
                 consolePanel("发送的 " + commond + "指令成功了", true);
                 return true;
+            },
+            
+            get: function (code) {
+                planet.Receiver(code);
             }
         }
     })();
-    
-    
-    // Adapter 编码
-    var Adapter = (function() {
-
-        return {
-            shipID: (function() {
-                return {
-                    1 : function() {
-                        return "0001";
-                    },
-
-                    2 : function() {
-                        return "0010";
-                    },
-
-                    3 : function() {
-                        return "0011";
-                    },
-
-                    4 : function() {
-                        return "0100";
-                    }
-                }
-            })(),
-            commond: (function() {
-                return {
-                    
-                    create: function () {
-                        return "0000";
-                    },
-                    
-                    start: function() {
-                        return "0001";
-                    },
-
-                    stop: function() {
-                        return "0010";
-                    },
-
-                    destruct: function() {
-                        return "0011";
-                    }
-                }
-            })()
-        }
-
-    })();
-    
-    
-    var getCode = function (commond) {
-        return Adapter.shipID[commond.id]() + Adapter.commond[commond.commond]();
-    }
     
     
     //  操作飞船
@@ -350,6 +490,7 @@
                     space.ship[parseInt(trank)] = new ship(false, trank, shipType);
                     console.log(space.ship[parseInt(trank)]);
                     space.trank[trank] = true;
+                    space.ship[parseInt(trank)].transmitter();
                 } else {
                     console.log("has a ship in trank" + trank);
                 }  
@@ -362,6 +503,7 @@
                         var commond = element.adapter.getCommond(commondCode);
                         if(element.signalSystem(commond).flag === true) {
                             var trank = element.signalSystem(commond).trank;
+                            space.ship[parseInt(trank)].state = "distruct";
                             space.ship[parseInt(trank)].selfDestructSystem.call(space.ship[parseInt(trank)]);
                             space.ship[parseInt(trank)] = null;
                             space.trank[trank] = false;
@@ -427,32 +569,32 @@
 
             switch(name) {
                 case "create" : {
-                    commond = commander(parseInt(trank)).create;
-                    var commondCode = getCode(commond);
+                    commond = planet.commander(parseInt(trank)).create;
+                    var commondCode = planet.getCode(commond);
                     if(BUS.send(commondCode)) {
                         setTimeout(setShip.createShip(commond.id), 100);
                     }
                 } break;
                 
                 case "stop": {
-                    commond = commander(parseInt(trank)).stop;
-                    var commondCode = getCode(commond);
+                    commond = planet.commander(parseInt(trank)).stop;
+                    var commondCode = planet.getCode(commond);
                     if(BUS.send(commondCode)) {
                         setTimeout(setShip.stopShip(commondCode), 100);
                     }
                 } break;
                 
                 case "start": {
-                    commond = commander(parseInt(trank)).start;
-                    var commondCode = getCode(commond);
+                    commond = planet.commander(parseInt(trank)).start;
+                    var commondCode = planet.getCode(commond);
                     if(BUS.send(commondCode)) {
                         setTimeout(setShip.startShip(commondCode), 100);
                     }
                 } break;
                 
                 case "destruct": {
-                    commond = commander(parseInt(trank)).destruct;
-                    var commondCode = getCode(commond);
+                    commond = planet.commander(parseInt(trank)).destruct;
+                    var commondCode = planet.getCode(commond);
                     if(BUS.send(commondCode)) {
                         setTimeout(setShip.destructShip(commondCode), 100);
                     }

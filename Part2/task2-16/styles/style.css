@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgba(0, 0, 0, 0.1);
+    font-family: "微软雅黑";
+    font-size: 14px;
+}
+
+
+html::-webkit-scrollbar, .console::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+html::-webkit-scrollbar, .console::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+
+html::-webkit-scrollbar, .console::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 6px;
+}
+
+#wrap {
+    padding: 10px;
+}
+
+.space {
+    float: left;
+    width: 700px;
+    height: 700px;
+    position: relative;
+}
+
+
+.plante {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 0, 153, .5);
+    border-radius: 100px;
+}
+
+.ship {
+    position: absolute;
+    left: 258px;
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    background: #ccc;
+    line-height: 30px;
+    text-align: center;
+}
+
+.panel {
+    position: absolute;
+    margin-left: 700px;
+    width: 500px;
+}
+
+.panel div {
+    margin: 10px;
+}
+
+.console {
+    position: absolute;
+    width: 500px;
+    height: 120px;
+    margin-left: 700px;
+    margin-top: 350px;
+    padding: 10px;
+    overflow-y: scroll;
+    border: 1px dotted rgba(0, 0, 0, .5);
+}
+
+
+.ship-state {
+    position: absolute;
+    width: 500px;
+    height: 130px;
+    margin-left: 700px;
+    margin-top: 500px;
+    padding: 10px;
+    overflow-y: scroll;
+    border: 1px dotted rgba(0, 0, 0, .5);
+}
+
+.panel button {
+    width: 80px;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    background: rgba(150, 311, 153, .5);
+    color: #fff;
+}
+
+.trank-1 {
+    top: 150px;
+    transform-origin: 40px 150px;
+}
+
+.trank-2 {
+    top: 100px;
+    transform-origin: 40px 200px;
+}
+
+.trank-3 {
+    top: 50px;
+    transform-origin: 40px 250px;
+}
+
+.trank-4 {
+    top: 0px;
+    transform-origin: 40px 300px;
+}
+
+
+.power-config {
+    float: left;
+}
+
+.energy-config::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.ship-state table {
+    width: 480px;
+    border-collapse: collapse;
+    border: 1px dotted #000;
+    text-align: center;
+}
+
+.ship-state table tr {
+    height: 25px;
+}
+
+.ship-state table th {
+    border: 1px dotted #000;
+}
+
+.ship-state table td {
+    border: 1px dotted #000;
+}
