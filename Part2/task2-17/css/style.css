@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑";
+}
+
+#wrap {
+    margin-top: 120px;
+    margin-left: 120px;
+}
+
+#name {
+    height: 20px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#name + p {
+    font-size: 12px;
+    margin-left: 40px;
+    line-height: 24px;
+}
+
+#check-button {
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    border: none;
+    background: rgba(0, 0, 255, .5);
+    color: #fff;
+}

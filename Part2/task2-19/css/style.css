@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: "微软雅黑";
+}
+
+#wrap {
+    margin: 100px 120px;
+}
+
+#identity {
+    margin-bottom: 15px;
+}
+
+#identity input {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+#select-wrap select {
+    height: 25px;
+    border-radius: 5px;
+    border-color: #ccc;
+}
+
+#city-choise {
+    width: 100px;
+}
+
+#school-choise {
+    width: 150px;
+}
+
+.workplace {
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

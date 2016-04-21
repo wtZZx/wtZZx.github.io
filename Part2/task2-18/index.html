@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+       <div id="wrap">
+           <form>
+               <div>
+                   <label for="name">名称:</label>
+                   <input type="text" name="name" id="name">
+                   <p>必填，长度为4-16个字符</p>
+               </div>
+               
+               <div>
+                   <label for="password">密码:</label>
+                   <input type="password" name="password" id="password">
+                   <p>必填，长度为8-16个数字或英文字符</p>
+               </div>
+               
+               <div class="re-pass">
+                   <label for="re-password">密码确认:</label>
+                   <input type="password" name="repassword" id="re-password">
+                   <p>请重复输入一次密码</p>
+               </div>
+               
+               <div>
+                   <label for="email">邮箱:</label>
+                   <input type="email" name="email" id="email">
+                   <p>请输入邮箱</p>
+               </div>
+               
+               <div>
+                   <label for="phone">手机:</label>
+                   <input type="tel" name="phone" id="phone">
+                   <p>请输入中国大陆手机号</p>
+               </div>
+               
+               <div>
+                   <button type="button" id="check-button">提交</button>
+               </div>
+           </form>
+       </div>
+       <script src="script/script.js"></script>
+    </body>
+</html>
