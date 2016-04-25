@@ -129,3 +129,8 @@ main > article > h2 {
 .review-page:hover {
     transform: rotate(15deg);
 }
+
+.unfinished-tip {
+    font-weight: bold;
+    color: red;
+}
