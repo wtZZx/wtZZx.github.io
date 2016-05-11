@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Microsoft Yahei";
+}
+
+.table-wrap {
+    margin: 100px;
+}
+
+table, table th, table td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+table th {
+    width: 130px;
+    height: 40px;
+    background: #000;
+    color: #fff;
+}
+
+table th i {
+    cursor: pointer; 
+    margin-left: 10px;
+}
+
+table td {
+    width: 130px;
+    height: 35px;
+    background: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.lock-head {
+    position: fixed;
+    top: 0;
+}
+
+.big {
+    font-size: 120px;
+}

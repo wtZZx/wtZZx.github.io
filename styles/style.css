@@ -134,3 +134,26 @@ main > article > h2 {
     font-weight: bold;
     color: red;
 }
+
+.html-part1 {
+    width: 550px;
+    float: left;
+}
+
+.js-part2 {
+    width: 550px;
+    float: left;
+    margin-left: 100px;
+}
+
+.js-part3 {
+    position: absolute;
+    margin-top: 500px;
+    width: 550px;
+}
+
+.js-part2::after {
+    display: table;
+    clear: both;
+    content: "";
+}
