@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Microsoft Yahei"
+}
+
+#calendar-wrap {
+    width: 220px;
+    height: 240px;
+    border: 1px solid #ccc;
+}
+
+.calendar-input {
+    width: 220px;
+    height: 30px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .8);
+}
+
+.date-input {
+    margin: 100px 0 0 100px;
+}
+
+#date-select {
+    height: 30px;
+    width: 180px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.date-select-panel {
+    width: 220px;
+    height: 30px;
+    background: rgba(204, 0, 0, 1);
+    box-sizing: border-box;
+}
+
+.date-select-panel i {
+    margin: 0 3px;
+    color: #fff;
+}
+
+.date-select-panel i:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, .5);
+}
+
+.show-year-month {
+    display: inline-block;
+    width: 85px;
+    margin: 0 10px;
+    font-size: 13px;
+    line-height: 30px;
+    color: #fff;
+}
+
+
+.day-table {
+    width: 220px;
+    font-size: 12px;
+    height: 200px;
+    box-sizing: border-box;
+    border-color: rgba(0, 0, 0, .5);
+    border-collapse: collapse;
+}
+
+.toDay-select-style {
+    background: rgba(204, 0, 0, 1);
+    color: #fff;
+}
+
+tr td:first-child,tr td:last-child {
+    color: rgba(204, 0, 0, 1);
+}
+
+.day-table td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.dayTD-mouseover {
+    cursor: pointer;
+    border: 1px solid rgba(204, 0, 0, 1);
+}
+
+.past-date {
+    color: #ccc;
+}
+
+.select-day {
+    background: rgba(0, 153, 204, 1);
+    color: #fff;
+}
+
+table tr td.day-td {
+    cursor: pointer;
+    background: rgba(0, 102, 204, .8);
+    color: #fff;
+}
+
+table tr td.pass-day {
+    color: #ccc;
+}
+
+.calendar-transition {
+    transition: all .2s ease-out;
+}
+
+.calendar-enter {
+    transform: scale(1.1);
+}
+
+.calendar-leave {
+    transform: scale(1);
+}

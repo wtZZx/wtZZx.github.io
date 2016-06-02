@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+}
+
+
+#calendar-wrap {
+    width: 220px;
+    height: 240px;
+    border: 1px solid #ccc;
+    margin: 0 200px;
+}
+
+.date-input {
+    margin: 100px 0 0 100px;
+}
+
+#date-select {
+    height: 30px;
+    width: 180px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.date-select-panel {
+    width: 220px;
+    height: 30px;
+    padding-left: 60px;
+    background: rgba(204, 0, 0, 1);
+    box-sizing: border-box;
+}
+
+.select-style {
+    border: 1px solid rgba(204, 0, 0, 1);
+    vertical-align: -webkit-baseline-middle;
+}
+
+.day-table {
+    width: 220px;
+    font-size: 12px;
+    height: 200px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.toDay-select-style {
+    background: rgba(204, 0, 0, 1);
+    color: #fff;
+}
+
+.day-table tr td:first-child, .day-table tr td:last-child {
+    color: rgba(204, 0, 0, 1);
+}
+
+.day-table td {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.week-row {
+    font-weight: bold;
+}
+
+.dayTD-mouseover {
+    cursor: pointer;
+    border: 1px solid rgba(204, 0, 0, 1);
+}
+
+.past-date {
+    color: #ccc;
+}
+
+.select-day {
+    background: rgba(0, 153, 204, 1);
+    color: #fff;
+}

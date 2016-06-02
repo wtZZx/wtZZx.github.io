@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    </head>
+    <body>
+        <template id="calendar-template">
+            <div id="calendar-text">
+                <input type="text" class="calendar-input"
+                       v-bind:value="userSelecteDate"  
+                       v-on:focus="show = true">
+            </div>
+            <div id="calendar-wrap" v-show.sync="show" transition="calendar">
+                <div class="date-select-panel">
+                    <p class="show-year-month">
+                        <span>{{ selectedYear }} 年</span>
+                        <span>{{ selectedMonth }} 月</span>
+                    </p>
+                    <i class="fa fa-chevron-up" aria-hidden="true" v-on:click="dateAddMethod"></i>
+                    <i class="fa fa-chevron-down" aria-hidden="true" v-on:click="dateLesMethod"></i>
+                </div>
+                
+                <table class="day-table">
+                    <tbody>
+                        <td v-for="week in weeks">
+                            {{ week }}
+                        </td>
+                    </tbody>
+                    <tr v-for="item in days" track-by="$index">
+                        <td v-for="day in item" track-by="$index" 
+                            v-on:click="clickDay" 
+                            v-on:mouseover="mouseoverDay"
+                            v-bind:class="[day.isBelow ? classPassDay: '']">
+                            {{ day.day }}
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+        </template>
+        
+        
+        <div id="app">
+            <span>选择日期：</span>
+            <calendar>
+            </calendar>
+        </div>
+        
+        <script src="./script/bundle.js"></script>
+    </body>
+</html>
